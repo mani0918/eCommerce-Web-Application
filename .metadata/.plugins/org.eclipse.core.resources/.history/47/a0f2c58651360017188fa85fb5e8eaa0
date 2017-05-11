@@ -12,7 +12,7 @@ public interface MyCartDAO {
 	
 	public List<MyCart> list(String userId);
 	
-	public double getTotalAmount(String id);
+	public long getTotalAmount(String id);
 	
 	public boolean delete(MyCart myCart);
 	

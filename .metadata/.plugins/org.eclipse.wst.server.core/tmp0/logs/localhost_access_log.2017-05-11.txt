@@ -374,3 +374,9 @@
 0:0:0:0:0:0:0:1 - - [11/May/2017:18:20:24 +0530] "GET /ShoppingCartFrontEnd/resources/fonts/glyphicons-halflings-regular.eot? HTTP/1.1" 304 -
 127.0.0.1 - - [11/May/2017:18:21:37 +0530] "GET / HTTP/1.1" 404 1081
 0:0:0:0:0:0:0:1 - - [11/May/2017:18:21:39 +0530] "GET /ShoppingCartFrontEnd/ HTTP/1.1" 500 4756
+127.0.0.1 - - [11/May/2017:18:24:11 +0530] "GET / HTTP/1.1" 404 1081
+0:0:0:0:0:0:0:1 - - [11/May/2017:18:24:13 +0530] "GET /ShoppingCartFrontEnd/ HTTP/1.1" 200 5878
+0:0:0:0:0:0:0:1 - - [11/May/2017:18:24:18 +0530] "GET /ShoppingCartFrontEnd/LoginPage HTTP/1.1" 200 5249
+0:0:0:0:0:0:0:1 - - [11/May/2017:18:24:24 +0530] "GET /ShoppingCartFrontEnd/validate?username=mani&password=maha HTTP/1.1" 200 4460
+0:0:0:0:0:0:0:1 - - [11/May/2017:18:24:27 +0530] "GET /ShoppingCartFrontEnd/manageProducts HTTP/1.1" 200 7999
+0:0:0:0:0:0:0:1 - - [11/May/2017:18:24:27 +0530] "GET /ShoppingCartFrontEnd/resources/admin.css HTTP/1.1" 404 1058
