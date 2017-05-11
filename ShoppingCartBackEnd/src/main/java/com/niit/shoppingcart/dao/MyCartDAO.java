@@ -10,9 +10,16 @@ public interface MyCartDAO {
 	
 	public boolean update(MyCart myCart);
 	
-	public List<MyCart> list();
+	public List<MyCart> list(String userId);
 	
-	public MyCart get(String id);
+	public long getTotalAmount(String id);
 	
+	public boolean delete(MyCart myCart);
+	
+	public MyCart getCart(String userID, String productName);
+	
+	public Integer getQuantity(String userID, String productName);
+
+
 	
 }

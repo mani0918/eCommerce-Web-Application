@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="container">
-		<form class="form-horizontal" action="./validate">
+		<form class="form-horizontal" action="validate">
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="username"><span
 					class="glyphicon glyphicon-envelope"></span>Username:</label>

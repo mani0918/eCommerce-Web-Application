@@ -40,10 +40,10 @@ public class ProductDAOTestCase {
 		product.setId("DELL10");
 		product.setName("DELLInspiron15");
 		product.setDescription("DELL Inspiron15 5000 series");
-		product.setPrice("35000");
+		product.setPrice(35000);
 		product.setCategory_id("EL1254");
 		product.setSupplier_id("D10");
-		boolean flag = productDAO.save(product);
+		boolean flag = productDAO.saveOrUpdate(product);
 
 		// this assertEquals method
 		// error-if there is any runtime error- Red mark
@@ -51,14 +51,30 @@ public class ProductDAOTestCase {
 		// fail-if expected and actual is different- blue mark
 		assertEquals("createProductTestCase", true, flag);
 	}
+	@Test
+	public void updateProductTestCase() {
+		product.setId("DELL10");
+		product.setName("DELLInspiron15");
+		product.setDescription("DELL Inspiron15 5000 series");
+		product.setPrice(35066);
+		product.setCategory_id("EL1254");
+		product.setSupplier_id("D10");
+		boolean flag = productDAO.saveOrUpdate(product);
+		
+		// this assertEquals method
+		// error-if there is any runtime error- Red mark
+		// success-if expected and actual is same- green mark
+		// fail-if expected and actual is different- blue mark
+		assertEquals("updateProductTestCase", true, flag);
+	}
 	
 
-	@Test
+	/*@Test
 	public void updateProductTestCase() {
 		product.setId("DELL10");
 		product.setName("DELL LAPTOP");
 		product.setDescription("DELL Inspiron15 5000 series");
-		product.setPrice("35000");
+		product.setPrice(35000);
 		product.setCategory_id("EL1254");
 		product.setSupplier_id("D10");
 		boolean flag = productDAO.update(product);
@@ -68,7 +84,7 @@ public class ProductDAOTestCase {
 	// success-if expected and actual is same- green mark
 	// fail-if expected and actual is different- blue mark
 	assertEquals("updateProductTestCase", true, flag);
-}
+}*/
 	
 	
 	@Test

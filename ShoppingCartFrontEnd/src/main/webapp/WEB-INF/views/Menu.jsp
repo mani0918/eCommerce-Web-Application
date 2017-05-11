@@ -18,7 +18,7 @@
       <a class="navbar-brand" href="#">ShoppingCart</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="home">Home</a></li>
+      <li class="active"><a href="Home">Home</a></li>
       <c:forEach var="category" items="${categoryList}">
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}<span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -31,7 +31,7 @@
         </ul>
       </li>
       </c:forEach>
-      
+      </ul>
     
     <ul class="nav navbar-nav navbar-right">
       <li><a href="LoginPage"><span class="glyphicon glyphicon-user"></span>Login</a></li>

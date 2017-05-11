@@ -64,8 +64,9 @@ public class CategoryDAOImpl implements CategoryDAO{
 	}
 
 	public Category getCategoryByID(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return (Category) sessionFactory.getCurrentSession().get(Category.class,id);
+		
 	}
 
 	public boolean delete(String id) {
@@ -77,6 +78,12 @@ public class CategoryDAOImpl implements CategoryDAO{
 			return false;
 		}
 		return true;
+	}
+
+	public Category getCategoryByName(String name) {
+		
+		
+		return 	(Category)  sessionFactory.getCurrentSession().createQuery("from Category where name = ?").setString(0, name).uniqueResult();
 	}
 
 }

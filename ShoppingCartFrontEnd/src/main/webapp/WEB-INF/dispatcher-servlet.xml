@@ -1,3 +1,4 @@
+
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webflow="http://www.springframework.org/schema/webflow-config"
@@ -9,14 +10,14 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/webflow-config
-         http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd">
+        http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd">
 
 
 
 	<context:component-scan base-package="com.niit" />
-   
-	
- <mvc:annotation-driven />
+
+
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -25,8 +26,17 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	
-	  <mvc:resources mapping="/resources/**" location="/resources/" />
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+		<!-- setting maximum upload size -->
+		<property name="maxUploadSize" value="50000000" />
+
+	</bean>
+
+
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:annotation-driven />
 
 </beans>
 

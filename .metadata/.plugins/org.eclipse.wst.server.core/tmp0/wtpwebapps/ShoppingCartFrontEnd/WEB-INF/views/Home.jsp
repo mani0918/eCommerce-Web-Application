@@ -13,10 +13,19 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
+<style type="text/css">
+body {
+	background-image: url("resources/images/backimg.png");
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+}
+</style>
 
 
 <link rel="stylesheet" href="resources/css/bootstrap.css">
+
+
 
 <script src="resources/js/bootstrap.js"></script>
 </head>
@@ -28,7 +37,13 @@
 	<hr>
 	${message}
 	<jsp:include page="Menu.jsp"></jsp:include>
-<c:if test="${isAdmin=='true'}">
+	<%-- <jsp:include page="AllProducts.jsp"></jsp:include> --%>
+	
+	<c:if test="${isCustomerAtHome=='true'}">
+		<jsp:include page="Carousel.jsp"></jsp:include>
+
+	</c:if>
+	<c:if test="${isAdmin=='true'}">
 		<jsp:include page="admin/AdminHome.jsp"></jsp:include>
 	</c:if>
 
@@ -48,7 +63,7 @@
 		<br>
 	</c:if>
 
-	
+
 
 
 	<c:if test="${isUserClickedLogin=='true'}">

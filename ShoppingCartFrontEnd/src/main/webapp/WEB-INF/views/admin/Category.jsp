@@ -15,6 +15,7 @@
 
 	<h2>Manage Categories</h2>
 
+
 	<div id="CreateCategory">
 
 		<form action="manage_category_add">
@@ -25,13 +26,25 @@
 		</form>
 
 	</div>
+	<div id="UpdateCategory">
+
+		<form action="manage_category_update">
+
+			<input type="text" name="id" value="${selectedCategory.id}">
+			<input type="text" name="name" value="${selectedCategory.name}">
+			<input type="text" name="description"
+				value="${selectedCategory.description}"> <input
+				type="submit" value="Update Category">
+		</form>
+
+	</div>
 
 	<h2>Delete / Update the Categories</h2>
 	<div id="ShowCategories">
 
-		<table border="2">
+		<table border="2" class="table">
 			<thead>
-				<tr>
+				<tr class="active">
 					<td>Category ID</td>
 					<td>Category Name</td>
 					<td>Category Description</td>
@@ -46,10 +59,12 @@
 					<td>${category.name}</td>
 					<td>${category.description}</td>
 
-					<td><a href="manage_category_delete/${category.id}">
-							Delete | </a> <a href=""> Update </a></td>
+					<td><a href="manage_category_delete/${category.id}"><button
+								type="button" class="btn btn-warning">Delete</button> | </a> <a
+						href="manage_category_edit/${category.id}"><button
+								type="button" class="btn btn-success">Edit</button> </a></td>
 
-
+					<td></td>
 
 				</tr>
 

@@ -11,7 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.ProductDAO;
+import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.domain.Category;
+import com.niit.shoppingcart.domain.Product;
+import com.niit.shoppingcart.domain.Supplier;
 
 @Controller
 public class HomeController{
@@ -25,28 +29,42 @@ public class HomeController{
 	
 	@Autowired CategoryDAO categoryDAO;
 	
+	@Autowired ProductDAO productDAO;
 	
-	@RequestMapping("/")
+	@Autowired Product product;
+	
+	@Autowired SupplierDAO supplierDAO;
+	
+	@Autowired Supplier supplier;
+	
+	
+	@RequestMapping({"/","/Home"})
 	public ModelAndView goToHome()
 	{
 		//model.addAttribute("message", "This is my shopping cart website");
 		ModelAndView mv = new ModelAndView("Home");
-		mv.addObject("message", "This is my shopping cart website");
+		mv.addObject("isCustomerAtHome","true");
+			mv.addObject("message", "This is my shopping cart website");
 		
-		
+
 		// get all categories
 				List<Category> categoryList = categoryDAO.list();
 
 				// attach to session
 				session.setAttribute("categoryList", categoryList);
 				session.setAttribute("category", category);
+				
+				List<Supplier> supplierList = supplierDAO.list();
+				session.setAttribute("supplierList", supplierList);
+				session.setAttribute("supplier", supplier);
+				List<Product> productList = productDAO.list();
+				session.setAttribute("Product", product);
+				session.setAttribute("ProductList", productList);
+				
+				
 	return  mv;
 	}
-	@RequestMapping("/home")
-	public String home()
-	{
-		return "Home";
-	}
+	
 	@RequestMapping("/LoginPage")
 	public String loginPage(Model model)
 	{
