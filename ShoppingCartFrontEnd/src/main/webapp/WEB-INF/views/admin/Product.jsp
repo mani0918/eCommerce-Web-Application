@@ -93,17 +93,18 @@
 
 	<h3>Product List</h3>
 	<c:if test="${!empty productList}">
-		<table class="tg">
-			<tr>
+		<table class="table table-bordered">
+		<thead>
+			<tr class="active">
 				<th width="80">Product ID</th>
 				<th width="200">Product Description</th>
 				<th width="120">Product Name</th>
 				<th width="80">Price</th>
 				<th width="80">Category</th>
 				<th width="80">Supplier</th>
-				<th width="60">Edit</th>
-				<th width="60">Delete</th>
-			</tr>
+				<th width="100">Action</th>
+				</tr>
+			</thead>
 			<c:forEach items="${productList}" var="product">
 				<tr>
 					<td>${product.id}</td>
@@ -113,9 +114,10 @@
 					<td>${product.category.name}</td>
 					<td>${product.supplier.name}</td>
 					<td><a
-						href="<c:url value='manage_product_edit/${product.id}' />">Edit</a></td>
-					<td><a
-						href="<c:url value='manage_product_delete/${product.id}' />">Delete</a></td>
+						href="<c:url value='manage_product_edit/${product.id}' />"><button
+								type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>   |   </a>
+					<a href="<c:url value='manage_product_delete/${product.id}' />"><button
+								type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>
 				</tr>
 			</c:forEach>
 		</table>

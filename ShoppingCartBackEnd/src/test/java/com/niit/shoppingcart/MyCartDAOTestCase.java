@@ -21,11 +21,11 @@ public class MyCartDAOTestCase {
 	@Autowired
 	static MyCart myCart;
 	
-	@Autowired
+/*	@Autowired
 	static ProductDAO productDAO;
 	@Autowired
 	static Product product;
-	
+	*/
 	
 	@BeforeClass
 	public static void initialize() {
@@ -41,18 +41,32 @@ public class MyCartDAOTestCase {
 		// get the user from context
 		myCart=(MyCart)context.getBean("myCart");
 
-		productDAO = (ProductDAO) context.getBean("productDAO");
-		product=(Product)context.getBean("product");
-}
+		/*productDAO = (ProductDAO) context.getBean("productDAO");
+		product=(Product)context.getBean("product");*/
+   }
 	@Test
 	public void createMyCartTestCase(){
-		myCart.setId("03");
-		myCart.setUser_id("rakesh");
-		myCart.setProduct_name("DELL LAPTOP");
+	myCart.setId(03);
+		myCart.setUser_id("mani");
+		myCart.setProduct_name("DELLInspiron15");
+		myCart.setPrice(56455);
 			boolean flag = myCartDAO.save(myCart);
 		assertEquals("createMyCartTestCase", true, flag);
 		
 		
 	}
+	
+	@Test
+	public void updateMyCartTestCase(){
+		
+		myCart.setId(03);
+		myCart.setUser_id("mani");
+		myCart.setProduct_name("DELLInspiron15");
+		myCart.setPrice(55);
+			boolean flag = myCartDAO.update(myCart);
+		assertEquals("updateMyCartTestCase", true, flag);
+		
+	}
+	
 	
 }

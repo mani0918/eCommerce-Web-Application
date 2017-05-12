@@ -56,8 +56,8 @@
 					<td>${supplier.name}</td>
 					<td>${supplier.description}</td>
 
-					<td><a href="manage_supplier_delete/${supplier.id}"><button type="button" class="btn btn-warning">Delete</button>
-							| </a> <a href="manage_supplier_edit/${supplier.id}"><button type="button" class="btn btn-success">Edit</button></a></td>
+					<td><a href="manage_supplier_delete/${supplier.id}"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span></button>
+							| </a> <a href="manage_supplier_edit/${supplier.id}"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
 
 					<td></td>
 

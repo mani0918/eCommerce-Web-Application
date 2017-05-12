@@ -58,8 +58,9 @@ public class HomeController{
 				session.setAttribute("supplierList", supplierList);
 				session.setAttribute("supplier", supplier);
 				List<Product> productList = productDAO.list();
-				session.setAttribute("Product", product);
-				session.setAttribute("ProductList", productList);
+				
+				session.setAttribute("product", product);
+				session.setAttribute("productList", productList);
 				
 				
 	return  mv;

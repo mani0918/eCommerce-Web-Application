@@ -1,6 +1,10 @@
 package com.niit.shoppingcart.domain;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,17 +15,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyCart {
 	@Id
-	private String id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
 	private String user_id;
 	private String product_name;
 	private double price;
 	private String status;
-	private String date_added;
+	private Date date_added;
 	private int quantity;
-	public String getId() {
+
+	
+	
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUser_id() {
@@ -48,10 +56,11 @@ public class MyCart {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getDate_added() {
+	
+	public Date getDate_added() {
 		return date_added;
 	}
-	public void setDate_added(String date_added) {
+	public void setDate_added(Date date_added) {
 		this.date_added = date_added;
 	}
 	public int getQuantity() {

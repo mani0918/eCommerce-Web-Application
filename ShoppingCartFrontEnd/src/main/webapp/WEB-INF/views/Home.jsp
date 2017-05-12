@@ -41,8 +41,14 @@ body {
 	
 	<c:if test="${isCustomerAtHome=='true'}">
 		<jsp:include page="Carousel.jsp"></jsp:include>
-
+		
 	</c:if>
+	
+	<c:if test="${isCustomerAtHome=='true'}">
+		<jsp:include page="AllProducts.jsp"></jsp:include>
+		
+	</c:if>
+	
 	<c:if test="${isAdmin=='true'}">
 		<jsp:include page="admin/AdminHome.jsp"></jsp:include>
 	</c:if>

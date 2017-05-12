@@ -50,28 +50,26 @@ public class MyCartDAOImpl implements MyCartDAO{
 		return true;
 	}
 
-	public List<MyCart> list(String userId) {
+	public List<MyCart> list(String userID) {
 		// TODO Auto-generated method stub
-		Query query= sessionFactory.getCurrentSession().createQuery("from MyCart where user_id=?");
-		query.setString(0, userId);
-		return query.list();
+		return sessionFactory.getCurrentSession().createQuery("from MyCart where user_id=?").setString(0, userID).list();
 		
 
 	}
 
-	public double getTotalAmount(String id) {
+	public double getTotalAmount(String userID) {
 		// TODO Auto-generated method stub
 		Query query= sessionFactory.getCurrentSession().createQuery(" select sum(price) from MyCart where user_id=?");
-		query.setString(0, id);
+		query.setString(0, userID);
 		return  (Double) query.uniqueResult();
 	}
 
 
 	
 
-	public boolean delete(MyCart myCart) {
+	public boolean delete(int id) {
 		try{
-			sessionFactory.getCurrentSession().delete(myCart);
+			sessionFactory.getCurrentSession().delete(getCartById(id));
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -93,7 +91,7 @@ public class MyCartDAOImpl implements MyCartDAO{
 	}
 
 
-	public Integer getQuantity(String userID, String productName) {
+	/*public Integer getQuantity(String userID, String productName) {
 
 		String hql = "select quntity from  MyCart where userID = ?  &&  productName =?";
 	
@@ -103,6 +101,13 @@ public class MyCartDAOImpl implements MyCartDAO{
 		log.debug("Ending of the method getTotalAmount");
 		return (Integer) query.uniqueResult();
 
+	}
+*/
+
+	public MyCart getCartById(int id) {
+		
+		return (MyCart) sessionFactory.getCurrentSession().createQuery("from MyCart where id=?").setInteger(0, id).uniqueResult();
+		
 	}
 
 

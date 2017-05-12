@@ -60,9 +60,9 @@
 					<td>${category.description}</td>
 
 					<td><a href="manage_category_delete/${category.id}"><button
-								type="button" class="btn btn-warning">Delete</button> | </a> <a
+								type="button" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span></button> | </a> <a
 						href="manage_category_edit/${category.id}"><button
-								type="button" class="btn btn-success">Edit</button> </a></td>
+								type="button" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></button> </a></td>
 
 					<td></td>
 
