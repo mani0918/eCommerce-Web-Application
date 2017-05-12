@@ -1,5 +1,7 @@
 package com.niit.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,8 @@ public class UserController {
 	User user;
 
 	@Autowired
+	HttpSession session;
+	@Autowired
 	CategoryDAO categoryDAO;
 	@Autowired
 	Category category;
@@ -38,7 +42,7 @@ public class UserController {
 	@RequestMapping("/validate")
 	public ModelAndView login(@RequestParam("username") String id, @RequestParam("password") String password) {
 
-		ModelAndView mv = new ModelAndView("/Home");
+		ModelAndView mv = new ModelAndView("redirect:/Home");
 		if (userDAO.validate(id, password) == true) {
 			user = userDAO.get(id);
 			mv.addObject("message", "Welcome " + user.getName());
@@ -56,6 +60,8 @@ public class UserController {
 				mv.addObject("isAdmin", "true");
 			} else {
 				mv.addObject("isAdmin", "false");
+				session.setAttribute("isUserLoggedIn", "true");
+				session.setAttribute("loggedInUserId", id);
 			}
 		} 
 		else {

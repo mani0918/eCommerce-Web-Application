@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<div class="container">
+	<%-- <div class="container">
 		<div class="h2">View All Products</div>
 		<hr>
 		<table>
@@ -29,7 +29,75 @@
 			</c:forEach>
 		</table>
 
-	</div>
+	</div> --%>
+	<div class="container text-center">
+		<h2>Products</h2>
+		<hr>
+		<table>
+		<c:forEach var="product" items="${productList}">
+			<tr>
+				<td>
+					<div class="row">
+						<div class="col-sm-4">
+							
+								<img alt="${product.name}" width= "300px" height="220px"
+									src="<c:url value="resources/images/${product.id}.jpeg" />">
+								
+								<br>
+								<br>
+								<br>
+								<br>
 
+							<%-- </c:forEach> --%>
+
+						</div>
+					</div>
+				</td>
+				<td align="center">
+
+					<div class="col-sm-10">
+						
+							<div class=""><p>Name:${product.name}</p>
+								<p>Description:${product.description}</p>
+								<p>Price:${product.price}</p></div>
+								<a href="mycart/add/${product.id}"><button type="button"
+										class="btn btn-success">Add to Cart</button></a>
+							<br>
+							<br>
+							<br>
+							<br>
+							<!-- <div class="">
+       
+      </div> -->
+						</c:forEach>
+					</div>
+
+
+
+				</td>
+			</tr>
+
+			</div>
 </body>
 </html>
+<%-- <div class="col-sm-4">
+    <c:forEach var="product" items="${productList}">
+      <div class="well">
+       <p ${product.name}></p>
+      </div>
+      <div class="well">
+       <p ${product.description}></p>
+      </div>
+      </c:forEach>
+    </div> --%>
+<%--  <div class="col-sm-4">
+    <c:forEach var="product" items="${productList}">
+      <div class="">
+       <p>ProductName:${product.name}</p>
+      </div>
+      <div class="">
+       <p>ProductDescription: ${product.description}</p>
+      </div>
+      </c:forEach>
+    </div> --%>
+

@@ -79,9 +79,9 @@ public class CartController {
 		myCart.setProduct_name(product.getName());
 		myCart.setPrice(product.getPrice());
 		
-		String loggedInUserID = (String) session.getAttribute("loggedInUserID");
+		String loggedInUserId = (String) session.getAttribute("loggedInUserId");
 		
-		myCart.setUser_id(loggedInUserID);
+		myCart.setUser_id(loggedInUserId);
 		myCart.setStatus("N");
 		myCart.setQuantity(1);
 		myCart.setDate_added(new Date(System.currentTimeMillis()));

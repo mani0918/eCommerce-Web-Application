@@ -81,6 +81,9 @@ body {
 		<jsp:include page="Registration.jsp"></jsp:include>
 	</c:if>
 
+	<%-- <jsp:include page="Footer.jsp"></jsp:include> --%>
+
+
 </body>
 
 </html>
