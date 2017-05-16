@@ -12,14 +12,15 @@
 
 </head>
 <body>
-	<h1>Add a Product</h1>
-
+	<h1 align="center">Manage Product</h1>
+<br>
+<br>
 	<c:url var="addAction"
 		value="/manage_product_add?${_csrf.parameterName}=${_csrf.token}">
 	</c:url>
 	<form:form action="${addAction}" commandName="product"
 		enctype="multipart/form-data" method="post">
-		<table>
+		<table  align="center">
 			<tr>
 				<td><form:label path="id">
 						<spring:message text="ID" />
@@ -79,6 +80,8 @@
 				<td colspan="2"><c:if test="${!empty product.name}">
 						<input type="submit" value="<spring:message text="Edit Product"/>" />
 					</c:if> <c:if test="${empty product.name}">
+					<br>
+					
 						<input type="submit" value="<spring:message text="Add Product"/>" />
 					</c:if></td>
 			</tr>

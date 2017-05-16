@@ -7,33 +7,34 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2 align="center">Register</h2>
 <div class="container">
-  <form class="form-horizontal">
+  <form action="Register" class="form-horizontal">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="firstname">Firstname:</label>
+      <label class="control-label col-sm-2" for="firstname">ID:</label>
       <div class="col-sm-6">
       
-        <input type="text" class="form-control" id="firstname">
+        <input type="text" class="form-control" name="userId" id="firstname">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="lastname">Lastname:</label>
+      <label class="control-label col-sm-2" for="lastname">Name:</label>
       <div class="col-sm-6">          
-        <input type="text" class="form-control" id="lastname">
+        <input type="text" class="form-control" name="userName" id="lastname">
         
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email Id:</label>
+      <label class="control-label col-sm-2" for="email">Password:</label>
       <div class="col-sm-6">          
-        <input type="email" class="form-control" id="email">
+        <input type="password" class="form-control" name="userPwd"  id="email">
         
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <label class="control-label col-sm-2" for="pwd">Contact:</label>
       <div class="col-sm-6">          
-        <input type="password" class="form-control" id="pwd" required >
+        <input type="number" class="form-control" name="userContact" id="pwd" required >
         
       </div>
     </div>

@@ -57,11 +57,9 @@ public class MyCartDAOImpl implements MyCartDAO{
 
 	}
 
+	
 	public double getTotalAmount(String userID) {
-		// TODO Auto-generated method stub
-		Query query= sessionFactory.getCurrentSession().createQuery(" select sum(price) from MyCart where user_id=?");
-		query.setString(0, userID);
-		return  (Double) query.uniqueResult();
+		return (Double) sessionFactory.getCurrentSession().createQuery(" select sum(price) from MyCart where user_id=?").setString(0, userID).uniqueResult();
 	}
 
 

@@ -45,7 +45,7 @@ public class CartController {
 		
 		model.addAttribute("myCart", myCart);
 		
-		String loggedInUserID = (String) session.getAttribute("loggedInUserID");
+		String loggedInUserID = (String) session.getAttribute("loggedInUser");
 		
 		if(loggedInUserID != null){
 			int cartSize = myCartDAO.list(loggedInUserID).size();
@@ -79,7 +79,7 @@ public class CartController {
 		myCart.setProduct_name(product.getName());
 		myCart.setPrice(product.getPrice());
 		
-		String loggedInUserId = (String) session.getAttribute("loggedInUserId");
+		String loggedInUserId = (String) session.getAttribute("loggedInUser");
 		
 		myCart.setUser_id(loggedInUserId);
 		myCart.setStatus("N");
@@ -113,4 +113,17 @@ public class CartController {
 		return mv;
 		
 	}
+	
+	@RequestMapping("/ThankYou")
+	public String cartCheckout(Model model) {
+		log.debug("Starting of cartCheckout in CartController");
+
+	
+			//session.setAttribute("isUserCheckedOut", "true");
+			model.addAttribute("isUserClickedCheckOut", "true");
+
+		log.debug("Ending of cartCheckout in CartController");
+		return "Home";
+	}
+	
 }

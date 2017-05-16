@@ -30,54 +30,51 @@
 		</table>
 
 	</div> --%>
+
 	<div class="container text-center">
 		<h2>Products</h2>
 		<hr>
-		<table>
 		<c:forEach var="product" items="${productList}">
-			<tr>
-				<td>
-					<div class="row">
+			<%-- <div class="col-md-6 col-sm-12">
+					<div class="container">
 						<div class="col-sm-4">
-							
-								<img alt="${product.name}" width= "300px" height="220px"
-									src="<c:url value="resources/images/${product.id}.jpeg" />">
-								
-								<br>
-								<br>
-								<br>
-								<br>
-
-							<%-- </c:forEach> --%>
-
+							<img alt="${product.name}" width="150px" height="150px"
+								src="<c:url value="resources/images/${product.id}.jpeg" />">
+						</div>
+						<div class="col-sm-8">
+							<p>${product.name}</p>
+							<p>${product.description}</p>
+							<p>${product.price}</p>
+							<a href="mycart/add/${product.id}"><button type="button"
+									class="btn btn-success">Add to Cart</button></a>
 						</div>
 					</div>
-				</td>
-				<td align="center">
+				</div> --%>
 
-					<div class="col-sm-10">
+			<div class="col-md-6">
+				<div class="col-md-6">
+					<img src="<c:url value="resources/images/${product.id}.jpeg" />"
+						alt="${product.name}" width="200px" height="200px" />
+						<br />
+						<br />
 						
-							<div class=""><p>Name:${product.name}</p>
-								<p>Description:${product.description}</p>
-								<p>Price:${product.price}</p></div>
-								<a href="mycart/add/${product.id}"><button type="button"
-										class="btn btn-success">Add to Cart</button></a>
-							<br>
-							<br>
-							<br>
-							<br>
-							<!-- <div class="">
-       
-      </div> -->
-						</c:forEach>
-					</div>
-
-
-
-				</td>
-			</tr>
-
+				</div>
+				<div class="col-md-6">
+					<h3>${product.name}</h3>
+					<p>${product.description}</p>
+					<p><i class="fa fa-inr" aria-hidden="true"></i>${product.price}</p>
+					<p>
+						<a href="mycart/add/${product.id}"><button type="button"
+								class="btn btn-success">Add to Cart<span class="glyphicon glyphicon-shopping-cart"></span></button></a>
+					</p>
+					<br />
+					<br />
+					<br />
+				</div>
 			</div>
+
+		</c:forEach>
+	</div>
 </body>
 </html>
 <%-- <div class="col-sm-4">

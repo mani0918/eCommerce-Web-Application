@@ -13,28 +13,103 @@
 
 
 
-	<h2>Manage Categories</h2>
+	<h2 align="center">Manage Categories</h2>
+	<br>
+	<br>
+			
 
 
 	<div id="CreateCategory">
 
 		<form action="manage_category_add">
+<div class="container">
+		<form class="form-horizontal" >
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="id">ID:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="id"
+						id="id" placeholder="Enter category id">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="name">Name:</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control" name="name"
+						id="name" placeholder="Enter category name" required>
 
-			<input type="text" name="id"> <input type="text" name="name">
-			<input type="text" name="description"> <input type="submit"
-				value="Create Category">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="description">Description:</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control" name="description"
+						id="description" placeholder="Enter category description" required>
+
+				</div>
+			</div>
+	<br>
+	<br>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary">Create Category</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<br>
+	<br>
+
+
+
+
+
+
 		</form>
 
 	</div>
 	<div id="UpdateCategory">
 
 		<form action="manage_category_update">
+<div class="container">
+		<form class="form-horizontal" >
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="id">ID:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="id"
+						id="id" value="${selectedCategory.id}">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="name">Name:</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control" name="name"
+						id="name" value="${selectedCategory.name}">
 
-			<input type="text" name="id" value="${selectedCategory.id}">
-			<input type="text" name="name" value="${selectedCategory.name}">
-			<input type="text" name="description"
-				value="${selectedCategory.description}"> <input
-				type="submit" value="Update Category">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="description">Description:</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control" name="description"
+						id="description" value="${selectedCategory.description}">
+
+				</div>
+			</div>
+	<br>
+	<br>
+	
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary">Update Category</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
 		</form>
 
 	</div>

@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.MyCartDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.domain.Category;
+import com.niit.shoppingcart.domain.MyCart;
 import com.niit.shoppingcart.domain.Product;
 import com.niit.shoppingcart.domain.Supplier;
 
@@ -37,6 +39,8 @@ public class HomeController{
 	
 	@Autowired Supplier supplier;
 	
+	@Autowired MyCart myCart;
+	@Autowired MyCartDAO myCartDAO;
 	
 	@RequestMapping({"/","/Home"})
 	public ModelAndView goToHome()
@@ -63,10 +67,11 @@ public class HomeController{
 				session.setAttribute("productList", productList);
 				
 				
+				
 	return  mv;
 	}
 	
-	@RequestMapping("/LoginPage")
+	@RequestMapping("/Login")
 	public String loginPage(Model model)
 	{
 		model.addAttribute("isUserClickedLogin", "true");
@@ -80,5 +85,10 @@ public class HomeController{
 		return "Home";
 	}
 	
-	
+	@RequestMapping("/AboutUs")
+	public String contactUsPage(Model model) {
+		model.addAttribute("isUserClickedAboutUs", "true");
+		model.addAttribute("isUserAtHome", "false");
+		return "Home";
+	}
 }

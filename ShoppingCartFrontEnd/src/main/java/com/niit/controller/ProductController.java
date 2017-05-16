@@ -61,7 +61,7 @@ public class ProductController {
 	HttpSession session;
 
 	// Setting Path to store images
-	private String path = "E://ManideepNewProject//ShoppingCartFrontEnd//src//main//webapp//resources//images";
+	private String path = "F://ShoppingProject//ShoppingCartFrontEnd//src//main//webapp//resources//images";
 	
 	// Add or Update Product
 	@PostMapping("/manage_product_add")

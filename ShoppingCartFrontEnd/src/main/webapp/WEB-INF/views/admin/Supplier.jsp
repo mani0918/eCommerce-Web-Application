@@ -10,28 +10,92 @@
 <body>
 
 
-	<h2>Manage Suppliers</h2>
+	<h2 align="center">Manage Supplier</h2>
 
-
+<br>
 	<div id="CreateSupplier">
 
 		<form action="manage_supplier_add">
 
-			<input type="text" name="id"> <input type="text" name="name">
-			<input type="text" name="description"> <input type="submit"
-				value="Create Supplier">
+			<div class="container">
+		<form class="form-horizontal" >
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="id">ID:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="id"
+						id="id" placeholder="Enter supplier id">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="name">Name:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="name"
+						id="name" placeholder="Enter supplier name" required>
+
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="description">Description:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="description"
+						id="description" placeholder="Enter supplier description" required>
+
+				</div>
+			</div>
+	<br>
+	<br>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary">Create Supplier</button>
+				</div>
+			</div>
+		</form>
+	</div>
 		</form>
 
 	</div>
 	<div id="UpdateSupplier">
 
 		<form action="manage_supplier_update">
+<div class="container">
+		<form class="form-horizontal" >
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="id">ID:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="id"
+						id="id" value="${selectedSupplier.id}">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="name">Name:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="name"
+						id="name" value="${selectedSupplier.name}">
 
-			<input type="text" name="id" value="${selectedSupplier.id}">
-			<input type="text" name="name" value="${selectedSupplier.name}">
-			<input type="text" name="description"
-				value="${selectedSupplier.description}"> <input
-				type="submit" value="Update Supplier">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="description">Description:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="description"
+						id="description" value="${selectedSupplier.description}">
+
+				</div>
+			</div>
+	<br>
+	<br>
+	
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary">Update Supplier</button>
+				</div>
+			</div>
+		</form>
+	</div>
 		</form>
 
 	</div>

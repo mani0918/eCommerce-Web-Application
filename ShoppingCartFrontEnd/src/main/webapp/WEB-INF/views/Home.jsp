@@ -13,42 +13,77 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<style type="text/css">
+<!-- <style type="text/css">
 body {
 	background-image: url("resources/images/backimg.png");
 	background-size: cover;
 	padding: 0;
 	margin: 0;
 }
+
+</style>
+ -->
+ 
+ 
+<link rel="stylesheet"
+	href="<c:url value="resources/css/font-awesome.css"/>">
+<link rel="stylesheet"
+	href="<c:url value="resources/css/bootstrap.css"/>">
+<link rel="stylesheet" href="<c:url value="resources/css/Style.css"/>">
+
+
+
+<script src="<c:url value="/resources/js/bootstrap.js" />"></script>
+<script src="<c:url value="/resources/js/jquery-3.2.1.js"/>"></script>
+<style>
+hr.style13 {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+} 
+
+
+ 
 </style>
 
-
-<link rel="stylesheet" href="resources/css/bootstrap.css">
-
-
-
-<script src="resources/js/bootstrap.js"></script>
 </head>
 
 <body>
+
 	<center>
-		<h2>Welcome to Shopping Cart</h2>
+		<h2>
+			<img width="75px" height="75px"
+				src="<c:url value="resources/images/logo3.png" />">ShoppingCart
+		</h2>
 	</center>
-	<hr>
-	${message}
+
+	<!-- <hr> -->
+<hr class="style13">
+
 	<jsp:include page="Menu.jsp"></jsp:include>
-	<%-- <jsp:include page="AllProducts.jsp"></jsp:include> --%>
-	
+
+	${message}
+
 	<c:if test="${isCustomerAtHome=='true'}">
 		<jsp:include page="Carousel.jsp"></jsp:include>
-		
+
 	</c:if>
-	
+
 	<c:if test="${isCustomerAtHome=='true'}">
 		<jsp:include page="AllProducts.jsp"></jsp:include>
-		
+
 	</c:if>
-	
+
+
+	<c:if test="${isUserClickedCheckOut=='true'}">
+		<jsp:include page="ThankYou.jsp"></jsp:include>
+	</c:if>
+
+	<c:if test="${isUserClickedCart=='true'}">
+		<jsp:include page="Cart.jsp"></jsp:include>
+
+	</c:if>
+
 	<c:if test="${isAdmin=='true'}">
 		<jsp:include page="admin/AdminHome.jsp"></jsp:include>
 	</c:if>
@@ -70,7 +105,9 @@ body {
 	</c:if>
 
 
-
+	<c:if test="${isUserClickedAboutUs=='true' }">
+		<jsp:include page="AboutUs.jsp"></jsp:include>
+	</c:if>
 
 	<c:if test="${isUserClickedLogin=='true'}">
 		<jsp:include page="Login.jsp"></jsp:include>
@@ -81,8 +118,7 @@ body {
 		<jsp:include page="Registration.jsp"></jsp:include>
 	</c:if>
 
-	<%-- <jsp:include page="Footer.jsp"></jsp:include> --%>
-
+	<jsp:include page="Footer.jsp"></jsp:include>
 
 </body>
 
