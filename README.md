@@ -42,7 +42,6 @@ Example --
 ### Technologies used 
 - Spring framework
 - Hibernate ORM tool
-- Angular JS
 - Bootstrap 3
 - HTML 5
 - CSS 3
